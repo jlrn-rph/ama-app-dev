@@ -1,2 +1,5 @@
 .venv
 commands.txt
+crm/crm/__pycache__
+crm/website/__pycache__
+crm/website/migrations/__pycache__
