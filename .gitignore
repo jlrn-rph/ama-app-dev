@@ -6,3 +6,6 @@ commands.txt
 1-crm-auth/crm/__pycache__
 1-crm-auth/website/__pycache__
 1-crm-auth/website/migrations/__pycache__
+2-crm-crud/crm/__pycache__
+2-crm-crud/website/__pycache__
+2-crm-crud/website/migrations/__pycache__
