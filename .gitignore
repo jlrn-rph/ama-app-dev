@@ -1,5 +1,8 @@
 .venv
 commands.txt
-crm/crm/__pycache__
-crm/website/__pycache__
-crm/website/migrations/__pycache__
+0-demo/demo/__pycache__
+0-demo/myapp/migrations/__pycache__
+0-demo/myapp/__pycache__
+1-crm-auth/crm/__pycache__
+1-crm-auth/website/__pycache__
+1-crm-auth/website/migrations/__pycache__
