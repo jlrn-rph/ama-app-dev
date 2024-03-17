@@ -11,15 +11,14 @@
             <thead class="table-dark">
               <tr>
                 <th scope="col">ID</th>
+                <th scope="col">Created At</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
-                <th scope="col">Phone</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Address</th>
                 <th scope="col">City</th>
                 <th scope="col">State</th>
                 <th scope="col">Zipcode</th>
-                <th scope="col">Created At</th>
               </tr>
             </thead>
             <tbody>
@@ -28,9 +27,8 @@
                     {% for record in records %}
                         <td><a href="{% url 'record' record.id %}">{{ record.id }}</td>
                         <td>{{ record.created_at }}</td>
-                        <td>{{ record.first_name }}</td>
-                        <td>{{ record.last_name }}</td>
-                        <td>{{ record.first_name }}</td>
+                        <td>{{ record.first_name }} {{ record.last_name }}</td>
+                        <td>{{ record.email }}</td>
                         <td>{{ record.phone }}</td>
                         <td>{{ record.address }}</td>
                         <td>{{ record.city }}</td>
@@ -61,4 +59,11 @@
 </div>
 
 {% endif %}
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="ShopifyBot"
+  agent-id="3e2be5ad-051b-44a7-afdf-52ffb398b4a4"
+  language-code="en"
+></df-messenger>
 {% endblock %} 
