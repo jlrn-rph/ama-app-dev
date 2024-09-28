@@ -1,0 +1,73 @@
+.navbar-tech {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: #f1f1f1;
+  }
+  
+  .jumbotron {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    margin-top: 60px;
+  }
+  
+  .weather-card {
+    background-color: #7eb9f7;
+    color: rgb(54, 53, 53);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  .weather-card img {
+    width: 50px;
+    margin-left: 10px;
+  }
+  
+  .input-group input {
+    border-radius: 0;
+  }
+  
+  .input-group .btn {
+    border-radius: 0;
+  }
+  
+  .weather-info {
+    margin-top: 30px;
+  }
+  
+  .previous-searches {
+      margin-top: 20px;
+      padding: 1.5rem;
+      background-color: #f8f9fa; /* Light background for contrast */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .previous-searches h2 {
+      margin-bottom: 1rem;
+  }
+  
+  .previous-searches .list-group-item {
+      background-color: #356197; /* White background for list items */
+      border: 1px solid #dee2e6; /* Light border */
+      border-radius: 5px; /* Slightly rounded corners */
+      margin-bottom: 5px; /* Space between list items */
+  }
+  
+  /* New Styles for Side-by-Side Layout */
+  .weather-layout {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    margin-top: 30px; /* Add some space above the layout */
+  }
+  
+  .weather-info,
+  .previous-searches {
+    flex: 1; /* Allow both sections to grow equally */
+    margin-right: 20px; /* Add space between the two sections */
+  }
+  
+  .previous-searches {
+    margin-right: 0; /* Remove right margin from the last section */
+  }
+  

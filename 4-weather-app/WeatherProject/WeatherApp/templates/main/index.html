@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/solar/bootstrap.min.css" integrity="sha512-0BjJSwKzc+sx3vM/B9nEU98M/hCLM2bcIWrzGe9fqJZFVicDjxu2vrHd0/7ildD+23p5JsQNo8IEL+sOb+A1iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Weather App</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a href="../" class="navbar-brand">Weather App <span style="color: rgb(39, 117, 161);"> <strong>- Django Framework</strong></span></a>
+            <a href="https://openweathermap.org" class="navbar-tech" target="_blank">OpenWeather - Get Your API</a>
+        </div>
+    </nav>
+
+    <!-- Jumbotron Section -->
+    <div class="jumbotron text-center">
+        <h1 class="display-5">Weather App Interface</h1>
+        <p class="lead">Get real-time weather information using Python and Django.</p>
+        <img src="{% static 'images/weather.png' %}" alt="Weather Icon" class="img-fluid" style="width: 120px;">
+    </div>
+
+    <!-- Search Form -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <form method="post" class="col-md-12">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" class="form-control" name="city" placeholder="Enter City..." aria-label="City name">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+        </nav>
+
+        <!-- Error Message Section -->
+        {% if error_message %}
+            <div class="alert alert-danger mt-3" role="alert">
+                {{ error_message }}
+            </div>
+        {% endif %}
+
+        <!-- Weather and Previous Searches Section -->
+        <div class="weather-layout d-flex justify-content-between mt-4">
+            <div class="weather-info col-md-6">
+                {% if country_code and coordinate and temp and pressure and humidity %}
+                <div class="weather-card mx-auto" style="max-width: 500px;">
+                    <div class="card-body">
+                        <h4><span class="badge badge-secondary">Country Code:</span> {{country_code}}</h4>
+                        <h4><span class="badge badge-secondary">Coordinates [X,Y]:</span> {{coordinate}}</h4>
+                        <h4><span class="badge badge-secondary">Temperature:</span> {{temp}}°C</h4>
+                        <h4><span class="badge badge-secondary">Pressure:</span> {{pressure}} hPa</h4>
+                        <h4><span class="badge badge-secondary">Humidity:</span> {{humidity}}%</h4>
+                        <h4><span class="badge badge-secondary">Forecast:</span> {{main}} <img
+                            src="http://openweathermap.org/img/w/{{icon}}.png" alt="Weather icon"></h4>
+                        <h4><span class="badge badge-secondary">Description:</span> {{description}}</h4>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="previous-searches col-md-6">
+                <h2>Previous Searches</h2>
+                <ul class="list-group">
+                    {% for record in weather_records %}
+                        <li class="list-group-item">{{ record.city }} - {{ record.temperature }}°C</li>
+                    {% empty %}
+                        <li>No previous searches</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4">
+        <p>&copy; 2024 Weather App. Powered by Django and OpenWeather API.</p>
+    </footer>
+</body>
+
+</html>
