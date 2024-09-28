@@ -10,3 +10,7 @@ commands.txt
 2-crm-crud/website/__pycache__
 2-crm-crud/website/migrations/__pycache__
 2-crm-crud/.var
+4-weather-app/WeatherProject/WeatherProject/__pycache__
+4-weather-app/WeatherProject/WeatherApp/__pycache__
+4-weather-app/WeatherProject/WeatherApp/migrations/__pycache__
+4-weather-app/.var
